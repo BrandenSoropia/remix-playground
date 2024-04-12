@@ -1,6 +1,6 @@
 import { MetaFunction, json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { getAllBlogPosts } from "~/common/data";
+import { NavLink, useLoaderData } from "@remix-run/react";
+import { getAllPosts } from "~/common/data";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,9 +10,9 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async () => {
-  const blogPosts = await getAllBlogPosts();
+  const posts = await getAllPosts();
 
-  return json({ blogPosts });
+  return json({ posts });
 };
 
 export default function Index() {
@@ -20,12 +20,12 @@ export default function Index() {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+      <h1>JSON Placeholder: List of Posts</h1>
       <ul>
-        {data.blogPosts.map((blogPost) => {
+        {data.posts.map((post) => {
           return (
-            <li key={blogPost.id}>
-              <a>{blogPost.title}</a>
+            <li key={post.id}>
+              <NavLink to={`post/${post.id}`}>{post.title}</NavLink>
             </li>
           );
         })}
