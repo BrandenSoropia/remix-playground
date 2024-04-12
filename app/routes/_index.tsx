@@ -21,6 +21,8 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>JSON Placeholder: List of Posts</h1>
+      {/* TODO: Add a new post*/}
+      <button onClick={() => {}}>TODO: Create New Post</button>
       <ul>
         {data.posts.map((post) => {
           return (

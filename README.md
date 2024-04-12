@@ -2,12 +2,23 @@
 
 📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
 
+## TODOs:
+
+- Create new post. Requirements:
+  - New route
+  - Action
+  - Figure out how to use localstorage to save and extend it to fake json
+- Test components
+- Try custom styling components using OG CSS
+
 ## Development
 
 Run the Vite dev server:
 
 ```shellscript
-npm run dev
+yarn
+
+yarn dev
 ```
 
 ## Deployment
@@ -15,13 +26,13 @@ npm run dev
 First, build your app for production:
 
 ```sh
-npm run build
+yarn build
 ```
 
 Then run the app in production mode:
 
 ```sh
-npm start
+yarn start
 ```
 
 Now you'll need to pick a host to deploy it to.
